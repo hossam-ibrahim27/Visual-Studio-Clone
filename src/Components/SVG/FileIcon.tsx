@@ -13,13 +13,13 @@ const FileIcon = ({ filename, isOpen, isFolder }: IProps) => {
 
     if (extension && Object.prototype.hasOwnProperty.call(extensionIcons, extension)) {
         const iconPath = isFolder ? isOpen ?
-            `/public/icons/${extensionIcons[extension]}-open.svg`
-            : `/public/icons/${extensionIcons[extension]}.svg`
-            : `/public/icons/${extensionIcons[extension]}.svg`
+            `/src/assets/icons/${extensionIcons[extension]}-open.svg`
+            : `/src/assets/icons/${extensionIcons[extension]}.svg`
+            : `/src/assets/icons/${extensionIcons[extension]}.svg`
         return <IconImage src={iconPath} variant={"w-5 h-5"} />
     }
-    if (isFolder && isOpen) return <IconImage src={"/public/icons/folder-default-open.svg"} variant={"w-5 h-5"} />
-    if (isFolder && !isOpen) return <IconImage src={"/public/icons/folder-default.svg"} variant={"w-5 h-5"} />
+    if (isFolder && isOpen) return <IconImage src={"/src/assets/icons/folder-default-open.svg"} variant={"w-5 h-5"} />
+    if (isFolder && !isOpen) return <IconImage src={"/src/assets/icons/folder-default.svg"} variant={"w-5 h-5"} />
     return <DefaultFileIcon />;
 }
 
